@@ -1,4 +1,4 @@
-"""do_it_django_prj URL Configuration
+"""blog_main URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
