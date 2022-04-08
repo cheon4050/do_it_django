@@ -9,6 +9,9 @@ class Category(models.Model):
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name_plural = 'categories'
+
 
 class Post(models.Model):
     title = models.CharField(max_length=30)
@@ -22,6 +25,7 @@ class Post(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category, blank=True,null=True, on_delete=models.SET_NULL)
     #methods
     def __str__(self):
         return f'[{self.pk}]  [{self.title}] :: {self.author}'
