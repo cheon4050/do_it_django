@@ -4,6 +4,12 @@ from django.db import models
 import os
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     title = models.CharField(max_length=30)
     hook = models.CharField(max_length=30, null=True)
