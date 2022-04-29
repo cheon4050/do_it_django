@@ -4,5 +4,8 @@
     {% endblock %}
     {% block main_area %}
     <h1>대문 페이지</h1>
+        {% for post in recent_posts %}
+            <p>{{ post.title }} - {{ post.cotent | truncatewords_html:30 | safe}}</p>
+        {% endfor %}
     {% endblock %}
 
