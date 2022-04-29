@@ -24,7 +24,7 @@
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on {{ post.created_at }} </p>
+        <p>Posted on {{ post.create_at }} </p>
 
         <hr>
 
@@ -36,7 +36,7 @@
         <hr>
 
         <!-- Post Content -->
-        <p>{{ post.content }}</p>
+        <p>{{ post.get_content_markdown | safe }}</p>
         <hr>
 
         {% if post.attached_file %}
